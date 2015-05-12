@@ -1,0 +1,14 @@
+<%= render 'shared/errors', obj: @post %>
+<div class="row">
+  <div class="well col-md-8 col-md-offset-2">
+    <%= form_for @post do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      
+      <%= f.label :content %>
+      <%= f.text_area :content, rows: 10 %>
+      
+      <%= f.submit(@post.new_record? ? 'Create Post' : 'Edit Post', class: 'btn btn-success') %>
+    <% end %>
+  </div>
+</div>

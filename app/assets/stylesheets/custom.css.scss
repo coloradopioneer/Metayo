@@ -1,17 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#logo {
+.logo {
   margin-top: 10px;
   margin-bottom: 10px;
   float: left;
   margin-right: 10px;
   font-size: 2em;
   color: #fff;
-  text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  background: url("logo.png");
 }
 
 #logo:hover {
@@ -21,6 +21,12 @@
 
 body {
   padding-top: 80px;
+  background-color: #303030;
+  color: #a4a4a4;
+}
+
+html {
+  background-color: #000;
 }
 
 .nav-item {
@@ -55,13 +61,48 @@ h3 {
   
 }
 
+.jumbotron {
+  background-color: #000;
+}
+
 .left {
   text-align: left;
   letter-spacing: .5px;
 }
 
 .footer {
-  margin-top: 25px;
+  margin-top: 120px;
+  padding-top: 40px;
+  background-color: #000;
   border-top: 1px solid #000;
-  color: #000;
+  color: #a4a4a4;
+  text-align: center;
 }
+
+.post_info {
+  margin-top: 10px;
+}
+
+.gravatar {
+  border-radius: 10px;
+}
+
+.well {
+  background-color: #1a1a1a;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+ 
+.row {
+   margin: 0 0 0 0;
+}
+
