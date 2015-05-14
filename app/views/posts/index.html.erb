@@ -12,6 +12,14 @@
       <h4><%= link_to post.title, post_path(post) %></h4>
       <p><%= simple_format(post.content) %></p>
       <p><span class="quiet"><small><%= time_ago_in_words(post.created_at) %> ago</small></span></p>
+      <div class="pull-right">
+        <%= link_to like_post_path(post, like: true), method: :post do %>
+          <i class="glyphicon glyphicon-arrow-up"></i> <%= post.vote_up_total %>
+        <% end %>
+        <%= link_to like_post_path(post, like: false), method: :post do %>
+          <i class="glyphicon glyphicon-arrow-down"></i> <%= post.vote_down_total %>
+        <% end %>
+      </div>
     </div>
   </div>
   <hr/>

@@ -4,9 +4,17 @@
     <%= gravatar_for @post.user, size: 200 %>
     <p><h5>Brought to you by: <%= @post.user.name %></h5></p>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-8 well">
     <%= link_to "Edit Post", edit_post_path(@post), class: 'btn btn-success pull-right' %>
     <h3><%= simple_format(@post.content) %></h3>
+	    <div class="pull-right">
+	    	<%= link_to like_post_path(@post, like: true), method: :post do %>
+					<i class="glyphicon glyphicon-arrow-up"></i> <%= @post.vote_up_total %>
+	    	<% end %>
+	    	<%= link_to like_post_path(@post, like: false), method: :post do %>
+					<i class="glyphicon glyphicon-arrow-down"></i> <%= @post.vote_down_total %>
+	    	<% end %>
+	    </div>
   </div>
 </div>
 

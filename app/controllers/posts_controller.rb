@@ -37,6 +37,18 @@ class PostsController < ApplicationController
       render :edit
     end
   end
+
+  def like
+    @post = Post.find(params[:id])
+    like = Like.create(like: params[:like], user: User.first, post: @post)
+    if like.valid?
+      flash[:success] = "Your vote has been counted."
+      redirect_to :back
+    else
+      flash[:danger] = "You can only vote once."
+      redirect_to :back
+    end
+  end
   
   private
   
@@ -45,3 +57,9 @@ class PostsController < ApplicationController
     end
 
 end
+
+
+
+
+
+

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :posts
+  has_many :likes
   before_save { self.email = email.downcase }
   validates :name, presence: true
   validates :username, presence: true
