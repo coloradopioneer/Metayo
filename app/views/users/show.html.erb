@@ -18,7 +18,7 @@
 	<div class="row">
 		<div class='col-lg-8 well col-lg-offset-2'>
 		  <h4><%= link_to post.title, post_path(post) %></h4>
-		    <p><%= simple_format(post.content) %></p>
+		    <p><%= auto_link(simple_format(post.content)) %></p>
 		    <p><span class="quiet"><small>created: <%= time_ago_in_words(post.created_at) %> ago</small></span></p>
 		    <p><span class="quiet"><small>updated: <%= time_ago_in_words(post.updated_at) %> ago</small></span></p>
 		  <div class="pull-right">

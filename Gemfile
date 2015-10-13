@@ -12,11 +12,13 @@ gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bcrypt', '3.1.7'
 gem 'fog', '1.23.0'
+gem	'rails_autolink'
+gem 'link_thumbnailer'
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 
-gem 'spring',        group: :development
+gem 'spring', '~> 1.4.0',        group: :development
 
 group :development, :test do
   gem 'sqlite3'

@@ -1,7 +1,10 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <%= link_to(image_tag("logo.png", class: "logo"), root_path) %>
     <div class="nav-item">
-      <%= link_to "Get Some", "", class: "btn btn-sm btn-primary" %>
+      <%= link_to "Categories", "", class: "btn btn-sm btn-primary" %>
+    </div>
+    <div class="nav-item">
+      <%= link_to "Tags", "", class: "btn btn-sm btn-primary" %>
     </div>
   <% if logged_in? %>
     <div class="nav-item">

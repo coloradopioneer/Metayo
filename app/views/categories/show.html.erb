@@ -6,8 +6,8 @@
     <%= link_to "Users", users_path %>
   </li>
 </ul>
-<%= render 'shared/page_title', title: "All Posts" %>
-<% @posts.each do |post| %>
+<%= render 'shared/page_title', title: "Posts In Category: " + @category.name %>
+<% @category.posts.each do |post| %>
   <div class="row">
     <div class="col-md-2">
       <section class="post_info center">
@@ -17,10 +17,11 @@
     </div>
     <div class='col-lg-8 well'>
       <h4><%= link_to post.title, post_path(post) %></h4>
-      <p><%= auto_link(simple_format(post.content)) %></p>
+      <p><%= simple_format(post.content) %></p>
       <p><small>Category(s): <%= render post.categories %></small></p>
       <p><small>Tag(s): <%= render post.tags %></small></p>
-      <p><span class="quiet"><small>created: <%= post.created_at.strftime("%m-%d-%Y") %></small></span>, <span class="quiet"><small>updated: <%= time_ago_in_words(post.updated_at) %> ago</small></span></p>
+      <p><span class="quiet"><small>created: <%= time_ago_in_words(post.created_at) %> ago</small></span></p>
+      <p><span class="quiet"><small>updated: <%= time_ago_in_words(post.updated_at) %> ago</small></span></p>
       <div class="pull-right">
         <%= link_to like_post_path(post, like: true), method: :post do %>
           <i class="glyphicon glyphicon-arrow-up"></i> <%= post.vote_up_total %>
@@ -34,5 +35,5 @@
   <hr/>
 <% end %>
 <div class='col-lg-12 center'>
-  <%= will_paginate %>
+  <%= will_paginate @posts %>
 </div>
